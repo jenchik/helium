@@ -7,7 +7,7 @@ import (
 	"go.uber.org/dig"
 	"go.uber.org/zap"
 
-	"github.com/im-kulikov/helium/group"
+	"github.com/jenchik/helium/group"
 )
 
 type (

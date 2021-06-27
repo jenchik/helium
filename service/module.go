@@ -1,6 +1,6 @@
 package service
 
-import "github.com/im-kulikov/helium/module"
+import "github.com/jenchik/helium/module"
 
 var (
 	_ = Module // prevent unused

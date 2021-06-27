@@ -26,7 +26,7 @@ linters-settings:
     # put imports beginning with prefix after 3rd-party packages;
     # only support one prefix
     # if not set, use goimports.local-prefixes
-    local-prefixes: github.com/im-kulikov/helium
+    local-prefixes: github.com/jenchik/helium
   dupl:
     threshold: 100
   goconst:

@@ -1,14 +1,13 @@
 # Helium
 
-![Codecov](https://img.shields.io/codecov/c/github/im-kulikov/helium.svg?style=flat-square)
-[![Maintainability](https://api.codeclimate.com/v1/badges/01507c1d7c4b9649b1a7/maintainability)](https://codeclimate.com/github/im-kulikov/helium/maintainability)
-[![Build Status](https://github.com/im-kulikov/helium/workflows/Go/badge.svg)](https://github.com/im-kulikov/helium/actions)
-[![Report](https://goreportcard.com/badge/github.com/im-kulikov/helium)](https://goreportcard.com/report/github.com/im-kulikov/helium)
+[![Maintainability](https://api.codeclimate.com/v1/badges/95d9b6808c6968333a7a/maintainability)](https://codeclimate.com/github/jenchik/helium/maintainability)
+[![Build Status](https://github.com/jenchik/helium/workflows/Go/badge.svg)](https://github.com/jenchik/helium/actions)
+[![Report](https://goreportcard.com/badge/github.com/jenchik/helium)](https://goreportcard.com/report/github.com/jenchik/helium)
 [![GitHub release](https://img.shields.io/github/release/im-kulikov/helium.svg)](https://github.com/im-kulikov/helium)
 ![GitHub](https://img.shields.io/github/license/im-kulikov/helium.svg?style=popout)
-[![Sourcegraph](https://sourcegraph.com/github.com/im-kulikov/helium/-/badge.svg)](https://sourcegraph.com/github.com/im-kulikov/helium?badge)
+[![Sourcegraph](https://sourcegraph.com/github.com/jenchik/helium/-/badge.svg)](https://sourcegraph.com/github.com/jenchik/helium?badge)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=im-kulikov/helium)](https://dependabot.com)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fim-kulikov%2Fhelium.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fim-kulikov%2Fhelium?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjenchik%2Fhelium.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjenchik%2Fhelium?ref=badge_shield)
 
 <img src="./.github/helium.jpg" width="350" alt="logo">
 
@@ -75,8 +74,8 @@ package main
 import (
   "github.com/spf13/viper"
   
-  "github.com/im-kulikov/helium"
-  "github.com/im-kulikov/helium/settings"
+  "github.com/jenchik/helium"
+  "github.com/jenchik/helium/settings"
 )
 
 func defaults(v *viper.Viper) {
@@ -109,8 +108,8 @@ import (
     "fmt"
     "time"
 
-    "github.com/im-kulikov/helium/group"
-    "github.com/im-kulikov/helium/service"
+    "github.com/jenchik/helium/group"
+    "github.com/jenchik/helium/service"
 )
 
 func prepare(svc service.Service) (group.Callback, group.Shutdown) {
@@ -176,8 +175,8 @@ package main
 import (
   "context"
 
-  "github.com/im-kulikov/helium/service"
-  "github.com/im-kulikov/helium/group"
+  "github.com/jenchik/helium/service"
+  "github.com/jenchik/helium/group"
 )
 
 type app struct {}
@@ -195,8 +194,8 @@ package some_pkg
 import (
     "context"
 
-    "github.com/im-kulikov/helium/module"
-    "github.com/im-kulikov/helium/service"
+    "github.com/jenchik/helium/module"
+    "github.com/jenchik/helium/service"
     "go.uber.org/dig"
 )
 
@@ -238,8 +237,8 @@ import (
     
     "go.uber.org/dig"
 
-    "github.com/im-kulikov/helium/module"
-    "github.com/im-kulikov/helium/service"
+    "github.com/jenchik/helium/module"
+    "github.com/jenchik/helium/service"
 )
 
 // for multiple services use `group:"services,flatten"`
@@ -505,11 +504,11 @@ Viper is a prioritized configuration registry. It maintains a set of configurati
 
 ## Web Module
 
-- `ServersModule` puts into container [web.Service](https://github.com/im-kulikov/web/service.go):
+- `ServersModule` puts into container [web.Service](https://github.com/jenchik/web/service.go):
     - [pprof](https://golang.org/pkg/net/http/pprof/) endpoint
     - [metrics](https://github.com/prometheus/client_golang) enpoint (by Prometheus)
     - [gRPC](https://github.com/golang/protobuf) endpoint
-    - [Listener](https://github.com/im-kulikov/web/listener.go) allows provide custom web service and run it in scope. 
+    - [Listener](https://github.com/jenchik/web/listener.go) allows provide custom web service and run it in scope. 
     - You can pass `pprof_handler` and/or `metric_handler`, that will be embedded into common handler,
       and will be available to call them
     - You can pass `api_listener`, `pprof_listener`, `metric_listener` to use them instead of network
@@ -567,8 +566,8 @@ API_ADDRESS=string
 package my
 
 import (
-  "github.com/im-kulikov/helium/module"
-  "github.com/im-kulikov/helium/web"
+  "github.com/jenchik/helium/module"
+  "github.com/jenchik/helium/web"
   "github.com/k-sone/snmpgo"
   "github.com/spf13/viper"
   "go.uber.org/zap"
@@ -634,8 +633,8 @@ func (l *SNMPListener) OnTRAP(trap *snmpgo.TrapRequest) {
 package my
 
 import (
-  "github.com/im-kulikov/helium/module"
-  "github.com/im-kulikov/helium/web"
+  "github.com/jenchik/helium/module"
+  "github.com/jenchik/helium/web"
   "go.uber.org/dig"
   "go.uber.org/zap"
   "google.golang.org/grpc"
@@ -702,13 +701,13 @@ import (
 	"go.uber.org/dig"
 	"go.uber.org/zap"
 	
-	"github.com/im-kulikov/helium"
-	"github.com/im-kulikov/helium/grace"
-	"github.com/im-kulikov/helium/logger"
-	"github.com/im-kulikov/helium/module"
-	"github.com/im-kulikov/helium/service"
-	"github.com/im-kulikov/helium/settings"
-	"github.com/im-kulikov/helium/web"
+	"github.com/jenchik/helium"
+	"github.com/jenchik/helium/grace"
+	"github.com/jenchik/helium/logger"
+	"github.com/jenchik/helium/module"
+	"github.com/jenchik/helium/service"
+	"github.com/jenchik/helium/settings"
+	"github.com/jenchik/helium/web"
 )
 
 func main() {
@@ -769,11 +768,11 @@ Helium is available as a [Go module](https://github.com/golang/go/wiki/Modules).
 ## Credits
 
 - [Evgeniy Kulikov](https://github.com/im-kulikov) - Author
-- [Alexander Tischenko](https://github.com/archaron) - Consultant
-- [Contributors](https://github.com/im-kulikov/helium/graphs/contributors)
+- [Evgenii Lobodin](https://github.com/jenchik) - Author
+- [Contributors](https://github.com/jenchik/helium/graphs/contributors)
 
 ## License
 
 [MIT](LICENSE)
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fim-kulikov%2Fhelium.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fim-kulikov%2Fhelium?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjenchik%2Fhelium.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjenchik%2Fhelium?ref=badge_large)

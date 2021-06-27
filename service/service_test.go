@@ -14,7 +14,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zaptest"
 
-	"github.com/im-kulikov/helium/internal"
+	"github.com/jenchik/helium/internal"
 )
 
 type (

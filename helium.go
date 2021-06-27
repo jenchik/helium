@@ -12,9 +12,9 @@ import (
 	"go.uber.org/dig"
 	"go.uber.org/zap"
 
-	"github.com/im-kulikov/helium/logger"
-	"github.com/im-kulikov/helium/module"
-	"github.com/im-kulikov/helium/settings"
+	"github.com/jenchik/helium/logger"
+	"github.com/jenchik/helium/module"
+	"github.com/jenchik/helium/settings"
 )
 
 type (

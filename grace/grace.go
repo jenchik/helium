@@ -1,7 +1,7 @@
 package grace
 
 import (
-	"github.com/im-kulikov/helium/module"
+	"github.com/jenchik/helium/module"
 )
 
 // Module graceful context.

@@ -1,4 +1,4 @@
-module github.com/im-kulikov/helium
+module github.com/jenchik/helium
 
 go 1.13
 

@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 
-	"github.com/im-kulikov/helium/internal"
+	"github.com/jenchik/helium/internal"
 )
 
 type (

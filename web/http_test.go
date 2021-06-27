@@ -12,8 +12,8 @@ import (
 	"go.uber.org/zap/zaptest"
 	"google.golang.org/grpc/test/bufconn"
 
-	"github.com/im-kulikov/helium/group"
-	"github.com/im-kulikov/helium/internal"
+	"github.com/jenchik/helium/group"
+	"github.com/jenchik/helium/internal"
 )
 
 func TestHTTPService(t *testing.T) {
